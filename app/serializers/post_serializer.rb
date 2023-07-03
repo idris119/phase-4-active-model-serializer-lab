@@ -1,0 +1,8 @@
+class PostSerializer < ActiveModel::Serializer
+  attributes :title, :content, :tags
+
+  belongs_to :author
+  def tags
+    self.object.tags
+  end
+end
